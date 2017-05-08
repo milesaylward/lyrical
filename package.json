@@ -8,6 +8,7 @@
     "url": "https://github.com/milesaylward/Lyrical"
   },
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon index.js --ignore client"
   },
   "author": "",
