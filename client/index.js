@@ -8,7 +8,7 @@ import { ApolloProvider } from 'react-apollo';
 import App from './components/App';
 import SongList from './components/SongList';
 import CreateSong from './components/CreateSong';
-import songDetail from './components/songDetail';
+import SongDetail from './components/SongDetail';
 
 const client = new ApolloClient({
   dataIdFromObject: o => o.id

@@ -6,7 +6,7 @@ import fetchSongDetail from '../queries/fetchSongDetail';
 import CreateLyric from './CreateLyric';
 import LyricList from './LyricList';
 
-class songDetail extends Component{
+class SongDetail extends Component{
   render(){
 
     const { song } = this.props.data
@@ -27,4 +27,4 @@ class songDetail extends Component{
 //pass id prop from react router to graphql so the correct song detail is shown
 export default graphql(fetchSongDetail, {
   options: (props) => { return { variables: { id: props.params.id }}}
-})(songDetail);
+})(SongDetail);
