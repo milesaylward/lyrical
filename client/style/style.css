@@ -1,17 +1,171 @@
+body {
+  background-color: rgb(218, 196, 169);
+}
+
+a {
+  color: inherit;
+}
+
+.header {
+  width: 100%;
+  background-color: white;
+}
+
+.logo {
+  width: 400px;
+}
+
 .material-icons{
  cursor: pointer;
 }
 
 .like-count{
   margin-right: 10px;
+  margin-left: 20px;
+  width: 15px;
 }
 
-.collection-item{
+.song-item{
+  width: 300px;
+  font-size: 18px;
+  padding: 5px 10px;
+  color: white;
+  font-family: 'Poiret One';
+  background-color: rgb(166, 189, 197);
   display: flex;
   justify-content: space-between;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+
+.song-item:active {
+  background-color: rgba(166, 189, 197, .5);
+}
+
+.song-title {
+  line-height: 30px;
 }
 
 .vote-box{
   display: flex;
   align-items: center;
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  width: 70vw;
+  margin: 0 auto;
+  margin-top: 100px;
+  align-items: center;
+  height: 50vh;
+}
+
+.trashcan {
+  margin-left: 20px;
+  cursor: pointer;
+  width: 30px;
+}
+
+.add {
+  vertical-align: top;
+  padding-top: 5px;
+}
+
+.add-new {
+  float: right;
+}
+
+.midline {
+  width: 5px;
+  height: 100%;
+  border-left: 3px solid rgb(81, 154, 186);
+  margin: 0 50px;
+}
+
+/****************** Create Song Css **********************/
+
+.song-container {
+  width: 50%;
+  margin: 100px auto;
+}
+
+.song-header {
+  font-family: 'Poiret One';
+}
+
+.song-header, .back {
+  color: white;
+}
+
+.song-title-input {
+  text-transform: capitalize;
+  padding-left: 15px;
+  font-size: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+
+/************** Song Detail Css *********************/
+
+
+.song-detail-header {
+  text-align: center;
+  color: rgb(87, 151, 193);
+  margin-bottom: 50px;
+  font-family: 'Poiret One';
+}
+
+.lyric-item {
+  width: 300px;
+  font-size: 18px;
+  padding: 5px 10px;
+  background-color: rgb(166, 189, 197);
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  font-family: 'Poiret One';
+}
+
+.lyric-item > p {
+  width: 70%;
+}
+
+.lyric-item:nth-child(even) {
+  background-color: transparent;
+}
+
+
+#add-lyric {
+  margin-top: 50px;
+}
+
+#add-input {
+  color: white;
+  font-size: 18px;
+}
+
+#add-input:focus {
+  border-bottom: 1px solid #7695a2;
+  box-shadow: 0 1px 0 0 #7695a2;
+}
+
+#lyric-submit {
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+  font-size: 24px;
+  background-color: rgb(166, 189, 197);
+  border-radius: 10px;
+  color: white;
+  border: none;
+}
+
+.add-label {
+  color: white;
+  font-size: 18px;
 }

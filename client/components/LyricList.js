@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { graphql } from 'react-apollo';
+import { graphql, compose } from 'react-apollo';
+import deleteLyric from '../queries/deleteLyric';
 import likeLyric from '../queries/likeLyric';
+import fetchSongDetail from '../queries/fetchSongDetail'
+import { trashcan } from './Images';
 
 
 class LyricList extends Component {
-
-  onLike(id, likes){
-    this.props.mutate({
+  onLike(id, likes) {
+    this.props.likeLyric({
       variables: { id },
       optimisticResponse: {
         __typename: 'Mutation',
@@ -19,26 +21,41 @@ class LyricList extends Component {
     });
   }
 
+  onLyricDelete(id) {
+    this.props.deleteLyric({
+      variables: { id },
+      refetchQueries: [{
+        query: fetchSongDetail,
+        variables: { id: this.props.songId }
+      }],
+    });
+  }
+
   renderLyrics(){
     return this.props.lyrics.map(({ likes, content, id }) =>{
       return (
-        <li key={id} className='collection-item'>
-          {content}
+        <li key={id} className='lyric-item'>
+          <p>{content}</p>
           <div className='vote-box'>
-            <span className='like-count'>{likes}</span>
             <i className='material-icons' onClick={() => this.onLike(id, likes)}>thumb_up</i>
+            <span className='like-count'>{likes}</span>
+            <img src={trashcan} className='trashcan' onClick={ ()=> this.onLyricDelete(id)} />
           </div>
+
         </li>
       );
     });
   }
   render() {
     return (
-      <ul className='collection'>
+      <ul className='lyric-container'>
         {this.renderLyrics()}
       </ul>
     );
   }
 }
 
-export default graphql(likeLyric)(LyricList);
+export default compose(
+  graphql(likeLyric, { name: 'likeLyric' }),
+  graphql(deleteLyric, { name: 'deleteLyric' }),
+)(LyricList);

@@ -12,6 +12,10 @@ class CreateLyric extends Component {
   submitLyrics(event){
     event.preventDefault();
 
+    if(this.state.content === '') {
+      alert('You must provide lyrics');
+      return;
+    }
     this.props.mutate({
       variables: {
         content: this.state.content,
@@ -23,12 +27,18 @@ class CreateLyric extends Component {
 
   render(){
     return (
-      <form onSubmit={this.submitLyrics.bind(this)}>
-        <label>Add a Lyric</label>
+      <form id='add-lyric' onSubmit={this.submitLyrics.bind(this)}>
+        <label className='add-label'>
+          Add a Lyric
+        </label>
         <input
+          id='add-input'
           value={this.state.content}
           onChange={event => this.setState({ content: event.target.value })}
         />
+        <button type='submit' id='lyric-submit' >
+            Add Lyric
+          </button>
       </form>
     )
   }
