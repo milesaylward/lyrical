@@ -1,11 +1,12 @@
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   context: __dirname,
   entry: './client/index.js',
   output: {
-    path: __dirname,
+    path: '/',
     filename: 'bundle.js'
   },
   module: {
@@ -52,6 +53,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'client/index.html'
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: 'client/images' }
+    ])
   ]
 };
