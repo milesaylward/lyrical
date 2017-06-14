@@ -2,10 +2,10 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  context: __dirname,
   entry: './client/index.js',
   output: {
-    path: '/',
-    publicPath: 'https://lyrical-app.herokuapp.com/',
+    path: __dirname,
     filename: 'bundle.js'
   },
   module: {
