@@ -3,8 +3,9 @@ import { graphql, compose } from 'react-apollo';
 import deleteLyric from '../queries/deleteLyric';
 import likeLyric from '../queries/likeLyric';
 import fetchSongDetail from '../queries/fetchSongDetail'
-import { trashcan } from './Images';
 
+
+const trashcan = 'http://res.cloudinary.com/milesaylward/image/upload/v1497468931/trashcan_darmol.png';
 
 class LyricList extends Component {
   onLike(id, likes) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { logo } from './Images';
+
+const logo = 'http://res.cloudinary.com/milesaylward/image/upload/v1497468931/lyricwritingapplogo_btuj7b.png'
 
 const Header = () => {
   return (

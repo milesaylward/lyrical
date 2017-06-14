@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { Link } from 'react-router';
-import { trashcan, border } from './Images';
+
+const trashcan = 'http://res.cloudinary.com/milesaylward/image/upload/v1497468931/trashcan_darmol.png';
 
 import fetchSongs from '../queries/fetchSongs';
 import deleteSong from '../queries/deleteSong';
