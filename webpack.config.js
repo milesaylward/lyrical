@@ -5,6 +5,7 @@ module.exports = {
   entry: './client/index.js',
   output: {
     path: '/',
+    publicPath: 'https://lyrical-app.herokuapp.com/',
     filename: 'bundle.js'
   },
   module: {
